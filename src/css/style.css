@@ -1,0 +1,88 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+}
+
+.container,
+.primeira-metade,
+.segunda-metade {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-family: 'EB Garamond', serif;
+
+}
+
+.primeira-metade {
+    background-color: black;
+    flex-direction: column;
+    /* Ajuste para colocar os elementos em colunas */
+}
+
+.container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.link_para_whatsapp {
+    padding-top: 25px;
+    /* Ajuste o espaçamento conforme necessário */
+}
+
+.link_para_whatsapp img {
+    background-size: auto;
+    width: 80px;
+    /* Ajuste o tamanho conforme necessário */
+    height: 80px;
+    /* Ajuste o tamanho conforme necessário */
+    margin-bottom: 10px;
+    /* Adicione espaço entre a imagem e o texto */
+}
+
+.link_para_whatsapp h2 {
+    color: white;
+}
+
+.apresentacao {
+    text-align: left;
+    /* Alinhe o texto à esquerda */
+}
+.segunda-metade {
+    flex-direction: column; /* Ajuste para colocar os elementos em colunas */
+    align-items: center; /* Centralize os elementos verticalmente na segunda metade */
+    background: linear-gradient(#333, white); /* Adicione o fundo gradiente */
+  }
+.segunda-metade h1 {
+  margin: 0; /* Remova as margens padrão do h1 */
+  text-align: center; /* Centralize o texto */
+}
+
+.segunda-metade h1 {
+    margin: 0;
+    /* Remova as margens padrão do h1 */
+    text-align: center;
+    /* Centralize o texto */
+}
+
+.segunda-metade h2 {
+    margin-top: 10vh;
+    /* Adicione espaçamento entre os elementos */
+    color: #333;
+    /* Adicione uma cor ao texto */
+}
+/* estilo para botão de experiências*/
+.acesso1 button{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #39e622;
+    cursor: pointer;
+    font-size: large;
+    font-family: 'EB Garamond', serif;
+}
+

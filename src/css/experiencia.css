@@ -1,0 +1,159 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* Adicione esta linha para organizar em coluna */
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+}
+
+p {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem;
+}
+
+
+.container,
+.primeira-metade,
+.segunda-metade {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primeira-metade {
+    background-color: black;
+    flex-direction: column;
+}
+
+.container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.link_para_whatsapp {
+    padding-top: 25px;
+}
+
+.link_para_whatsapp img {
+    background-size: auto;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.link_para_whatsapp h2 {
+    color: white;
+}
+
+.apresentacao {
+    text-align: left;
+    padding-top: 15vh;
+}
+
+.apresentacao h1 {
+    padding-bottom: 10vh;
+}
+
+.segunda-metade {
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(#333, white);
+    width: 100%;
+}
+
+.segunda-metade h1 {
+    margin: 0;
+    text-align: center;
+}
+
+.segunda-metade h2 {
+    margin-top: 10px;
+    color: #333;
+}
+
+.Fc_incorp {
+    padding-top: 3vh;
+}
+
+/* Apresentação de experiências */
+.demonstracao {
+    display: flex;
+    flex-wrap: wrap;
+    /* Adicione esta linha para que os itens se ajustem à largura da tela */
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.demonstracao img {
+    background-size: cover;
+    max-width: 45%;
+    max-height: 50vh;
+    /* Em vez de altura fixa, use altura máxima */
+    margin-bottom: 20px;
+    /* Adicione espaço entre as imagens */
+}
+
+.demonstracao2 {
+    display: flex;
+    flex-wrap: wrap;
+    /* Adicione esta linha para que os itens se ajustem à largura da tela */
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.demonstracao2 img {
+    background-size: cover;
+    max-height: 50vh;
+    /* Em vez de altura fixa, use altura máxima */
+    margin-bottom: 20px;
+    /* Adicione espaço entre as imagens */
+}
+
+.demonstracao3 {
+    display: flex;
+    flex-wrap: wrap;
+    /* Adicione esta linha para que os itens se ajustem à largura da tela */
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.demonstracao3 img {
+    background-size: cover;
+    width: 45%;
+    max-height: 50vh;
+    /* Em vez de altura fixa, use altura máxima */
+    margin-bottom: 20px;
+    /* Adicione espaço entre as imagens */
+
+}
+
+.Emisa p {
+    margin-bottom: 10vh;
+
+}
+
+.link_para_whatsapp {
+    /* Ajuste o espaçamento conforme necessário */
+    background-color: #333;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+
+}
+
+.link_para_whatsapp img {
+    background-size: auto;
+    width: 80px;
+    /* Ajuste o tamanho conforme necessário */
+    height: 80px;
+    /* Ajuste o tamanho conforme necessário */
+    /* Adicione espaço entre a imagem e o texto */
+}
