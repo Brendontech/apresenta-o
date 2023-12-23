@@ -97,6 +97,19 @@ html {
         /* Reduza o espaçamento horizontal para telas menores */
     }
 
+    .primeira-metade {
+        padding: 20px;
+        /* Ajuste o espaço interno da primeira metade */
+    }
+
+    .segunda-metade h1,
+    .segunda-metade h2 {
+        margin: 0;
+        text-align: center;
+        font-size: 24px;
+        /* Ajuste o tamanho da fonte para telas menores */
+    }
+
     .segunda-metade h1 {
         margin-top: 10px;
         /* Reduza o espaçamento superior para telas menores */

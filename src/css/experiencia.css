@@ -12,6 +12,8 @@ h1 {
 
 p {
     font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    /* Ajuste o tamanho do texto para telas maiores */
 }
 
 .container,
@@ -22,11 +24,15 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    /* Cobrir toda a largura disponível */
 }
 
 .primeira-metade {
     background-color: black;
     flex-direction: column;
+    width: 100%;
+    /* Cobrir toda a largura disponível */
 }
 
 .container img {
@@ -52,6 +58,12 @@ p {
 .apresentacao {
     text-align: left;
     padding-top: 15vh;
+    width: 100%;
+    /* Cobrir toda a largura disponível */
+    padding-left: 20px;
+    /* Adicione algum espaçamento à esquerda */
+    padding-right: 20px;
+    /* Adicione algum espaçamento à direita */
 }
 
 .apresentacao h1 {
@@ -123,6 +135,19 @@ p {
     .container,
     .primeira-metade,
     .segunda-metade {
-        padding: 20px;
+        padding: 10px;
+        /* Reduza o espaçamento interno para telas menores */
+    }
+
+    .apresentacao {
+        padding-left: 10px;
+        /* Ajuste do espaçamento à esquerda para telas menores */
+        padding-right: 10px;
+        /* Ajuste do espaçamento à direita para telas menores */
+    }
+
+    .p {
+        font-size: 16px;
+        /* Ajuste o tamanho do texto <p> para telas menores */
     }
 }
