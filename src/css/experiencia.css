@@ -4,7 +4,6 @@ html {
     margin: 0;
     display: flex;
     flex-direction: column;
-    /* Adicione esta linha para organizar em coluna */
 }
 
 h1 {
@@ -66,91 +65,64 @@ p {
     width: 100%;
 }
 
-.segunda-metade h1 {
+.segunda-metade h1,
+.segunda-metade h2 {
     margin: 0;
     text-align: center;
-}
-
-.segunda-metade h2 {
-    margin-top: 10px;
-    color: #333;
 }
 
 .Fc_incorp {
     padding-top: 3vh;
 }
 
-/* Apresentação de experiências */
-.demonstracao {
-    display: flex;
-    flex-wrap: wrap;
-    /* Adicione esta linha para que os itens se ajustem à largura da tela */
-    justify-content: space-around;
-    padding: 20px;
-}
-
-.demonstracao img {
-    background-size: cover;
-    max-width: 45%;
-    max-height: 50vh;
-    /* Em vez de altura fixa, use altura máxima */
-    margin-bottom: 20px;
-    /* Adicione espaço entre as imagens */
-}
-
-.demonstracao2 {
-    display: flex;
-    flex-wrap: wrap;
-    /* Adicione esta linha para que os itens se ajustem à largura da tela */
-    justify-content: space-around;
-    padding: 20px;
-}
-
-.demonstracao2 img {
-    background-size: cover;
-    max-height: 50vh;
-    /* Em vez de altura fixa, use altura máxima */
-    margin-bottom: 20px;
-    /* Adicione espaço entre as imagens */
-}
-
+.demonstracao,
+.demonstracao2,
 .demonstracao3 {
     display: flex;
     flex-wrap: wrap;
-    /* Adicione esta linha para que os itens se ajustem à largura da tela */
     justify-content: space-around;
     padding: 20px;
 }
 
+.demonstracao img,
+.demonstracao2 img,
 .demonstracao3 img {
     background-size: cover;
-    width: 45%;
+    max-width: 100%;
     max-height: 50vh;
-    /* Em vez de altura fixa, use altura máxima */
     margin-bottom: 20px;
-    /* Adicione espaço entre as imagens */
-
 }
 
 .Emisa p {
     margin-bottom: 10vh;
-
 }
 
 .link_para_whatsapp {
-    /* Ajuste o espaçamento conforme necessário */
     background-color: #333;
     display: flex;
     text-align: center;
     flex-direction: column;
-
 }
 
 .link_para_whatsapp img {
     background-size: auto;
     width: 80px;
-    /* Ajuste o tamanho conforme necessário */
     height: 80px;
-    /* Ajuste o tamanho conforme necessário */
-    /* Adicione espaço entre a imagem e o texto */
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+
+    /* Adapte as regras de estilo para telas de até 768 pixels de largura */
+    .demonstracao img,
+    .demonstracao2 img,
+    .demonstracao3 img {
+        max-width: 100%;
+    }
+
+    .container,
+    .primeira-metade,
+    .segunda-metade {
+        padding: 20px;
+    }
 }
