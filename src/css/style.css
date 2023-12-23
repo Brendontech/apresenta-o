@@ -62,7 +62,7 @@ html {
     text-align: center;
 }
 
-.segunda-metade h2, 
+.segunda-metade h2,
 .segunda-metade h1 {
     margin-bottom: 12vh;
     /* Adicione algum espaçamento superior */
@@ -84,6 +84,12 @@ html {
 
 /* Adicione uma regra de mídia para telas menores (celulares e tablets) */
 @media (max-width: 768px) {
+
+    body,
+    html {
+        height: 100%;
+    }
+
     .link_para_whatsapp {
         padding-top: 15px;
         /* Reduza o espaçamento superior para telas menores */
@@ -99,9 +105,11 @@ html {
         padding: 0 10px;
         /* Reduza o espaçamento horizontal para telas menores */
     }
-    .container{
+
+    .container {
         width: 45vh;
     }
+
     .segunda-metade h1,
     .segunda-metade h2 {
         margin: 0;
@@ -110,7 +118,7 @@ html {
         /* Ajuste o tamanho da fonte para telas menores */
     }
 
-    .segunda-metade h2, 
+    .segunda-metade h2,
     .segunda-metade h1 {
         margin-bottom: 6vh;
         /* Adicione algum espaçamento superior */
@@ -120,4 +128,5 @@ html {
         font-size: medium;
         /* Reduza o tamanho da fonte para telas menores */
     }
+
 }
