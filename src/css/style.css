@@ -76,7 +76,7 @@ html {
     /* Adicione uma cor ao texto */
 }
 /* estilo para botão de experiências*/
-.acesso1 button{
+.acesso1 a{
     padding: 10px;
     border-radius: 5px;
     border: none;
@@ -84,5 +84,7 @@ html {
     cursor: pointer;
     font-size: large;
     font-family: 'EB Garamond', serif;
+    text-decoration: none;
+    color: black;
 }
 
