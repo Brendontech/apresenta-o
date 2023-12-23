@@ -1,3 +1,4 @@
+body,
 html {
     height: 100%;
     margin: 0;
@@ -61,8 +62,9 @@ html {
     text-align: center;
 }
 
+.segunda-metade h2, 
 .segunda-metade h1 {
-    margin-top: 20px;
+    margin-bottom: 12vh;
     /* Adicione algum espaçamento superior */
 }
 
@@ -76,6 +78,7 @@ html {
     font-family: 'EB Garamond', serif;
     text-decoration: none;
     color: black;
+    margin-top: 3vh;
 }
 
 
@@ -96,23 +99,21 @@ html {
         padding: 0 10px;
         /* Reduza o espaçamento horizontal para telas menores */
     }
-
-    .primeira-metade {
-        padding: 20px;
-        /* Ajuste o espaço interno da primeira metade */
+    .container{
+        width: 45vh;
     }
-
     .segunda-metade h1,
     .segunda-metade h2 {
         margin: 0;
         text-align: center;
-        font-size: 24px;
+        font-size: 16px;
         /* Ajuste o tamanho da fonte para telas menores */
     }
 
+    .segunda-metade h2, 
     .segunda-metade h1 {
-        margin-top: 10px;
-        /* Reduza o espaçamento superior para telas menores */
+        margin-bottom: 6vh;
+        /* Adicione algum espaçamento superior */
     }
 
     .acesso1 a {
