@@ -1,4 +1,4 @@
-body,
+User body,
 html {
     height: 100%;
     margin: 0;
@@ -12,8 +12,6 @@ h1 {
 
 p {
     font-family: 'EB Garamond', serif;
-    font-size: 18px;
-    /* Ajuste o tamanho do texto para telas maiores */
 }
 
 .container,
@@ -24,15 +22,11 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    /* Cobrir toda a largura disponível */
 }
 
 .primeira-metade {
     background-color: black;
     flex-direction: column;
-    width: 100%;
-    /* Cobrir toda a largura disponível */
 }
 
 .container img {
@@ -58,12 +52,6 @@ p {
 .apresentacao {
     text-align: left;
     padding-top: 15vh;
-    width: 100%;
-    /* Cobrir toda a largura disponível */
-    padding-left: 20px;
-    /* Adicione algum espaçamento à esquerda */
-    padding-right: 20px;
-    /* Adicione algum espaçamento à direita */
 }
 
 .apresentacao h1 {
@@ -129,14 +117,18 @@ p {
     .demonstracao img,
     .demonstracao2 img,
     .demonstracao3 img {
-        max-width: 100%;
+        max-width: 99%;
     }
 
     .container,
     .primeira-metade,
     .segunda-metade {
-        padding: 10px;
+        padding: 0;
         /* Reduza o espaçamento interno para telas menores */
+    }
+
+    .container img {
+        width: 100%;
     }
 
     .apresentacao {
@@ -149,5 +141,9 @@ p {
     .p {
         font-size: 16px;
         /* Ajuste o tamanho do texto <p> para telas menores */
+    }
+
+    .link_para_whatsapp {
+        width: 100%;
     }
 }
