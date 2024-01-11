@@ -108,23 +108,27 @@ html {
     }
 
     .link_para_whatsapp img {
-        width: 60px;
-        height: 60px;
+        width: 4rem;
+        height: 4rem;
         margin-bottom: 5px;
     }
 
     .apresentacao {
         padding: 0 10px; /* Reduza o espaçamento horizontal para telas menores */
     }
-
-    .container {
-        width: 100%; /* Ocupa a largura total */
+    .container{
+        position: relative;
+        display: grid;
+        flex-wrap: wrap;
+        flex-direction: column;
+        grid-template-columns: 0.8fr 1.2fr;
+        height: 100vh;
     }
-
+   
     .segunda-metade h1,
     .segunda-metade h2 {
-        font-size: 14px; /* Ajuste o tamanho da fonte para telas menores */
-        margin-bottom: 4vh; /* Adicione algum espaçamento inferior */
+        font-size: 1.3rem; /* Ajuste o tamanho da fonte para telas menores */
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
 
     .acesso1 a {

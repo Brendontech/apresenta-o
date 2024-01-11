@@ -11,17 +11,20 @@ html {
 p {
     font-family: 'EB Garamond', serif;
 }
+.primeira-metade img{
+    height: 35vh;
+}
 .spacing{
-  margin-bottom: 6rem;
+    padding-bottom: 15vh;
 }
 .primeira-metade{
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
     height: 21vh;
-
+    z-index: 1;
+    width: 100%;
 }
 .container,
 .primeira-metade,
@@ -38,9 +41,10 @@ p {
     flex-direction: column;
 }
 
-.container img {
+.segunda-metade img {
+    display: flex;
+    justify-content: center;
     max-width: 100%;
-    height: 12rem;
 }
 
 .link_para_whatsapp {
@@ -73,7 +77,21 @@ p {
     background: linear-gradient(#333, white);
     width: 100%;
 }
+.demonstracao img,
+.demonstracao2 img,
+.demonstracao3 img {
+    background-size: cover;
+    max-width: 100%;
+    max-height: 50vh;
+    padding: 1.8rem;
+    margin: 0 auto; 
+    display: inline-block; 
+}
 
+.demonstracao3 {
+    padding: 1rem;
+    text-align: center; 
+}
 .segunda-metade h1,
 .segunda-metade h2 {
     margin: 0;
@@ -83,25 +101,6 @@ p {
 .Fc_incorp {
     padding-top: 3vh;
 
-}
-
-.demonstracao {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.demonstracao img,
-.demonstracao2 img,
-.demonstracao3 img {
-    background-size: cover;
-    max-width: 100%;
-    max-height: 50vh;
-    padding: 1.8rem;
-
-}
-.demonstracao3 {
-    padding: 1rem;
 }
 
 .Emisa p {
@@ -124,18 +123,11 @@ p {
 
 @media (max-width: 768px) {
 
-    /* Adapte as regras de estilo para telas de até 768 pixels de largura */
-    .demonstracao img,
-    .demonstracao2 img,
-    .demonstracao3 img {
-        max-width: 99%;
-    }
 
     .container,
     .primeira-metade,
     .segunda-metade {
         padding: 0;
-        /* Reduza o espaçamento interno para telas menores */
     }
 
     .container img {
@@ -144,14 +136,11 @@ p {
 
     .apresentacao {
         padding-left: 10px;
-        /* Ajuste do espaçamento à esquerda para telas menores */
         padding-right: 10px;
-        /* Ajuste do espaçamento à direita para telas menores */
-    }
+        }
 
     .p {
         font-size: 16px;
-        /* Ajuste o tamanho do texto <p> para telas menores */
     }
 
     .link_para_whatsapp {
