@@ -4,17 +4,25 @@ html {
     margin: 0;
     display: flex;
     flex-direction: column;
+    font-size: 1.2rem;
 }
 
-h1 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.2em;
-}
 
 p {
     font-family: 'EB Garamond', serif;
 }
+.spacing{
+  margin-bottom: 6rem;
+}
+.primeira-metade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: 21vh;
 
+}
 .container,
 .primeira-metade,
 .segunda-metade {
@@ -32,7 +40,7 @@ p {
 
 .container img {
     max-width: 100%;
-    height: auto;
+    height: 12rem;
 }
 
 .link_para_whatsapp {
@@ -74,15 +82,13 @@ p {
 
 .Fc_incorp {
     padding-top: 3vh;
+
 }
 
-.demonstracao,
-.demonstracao2,
-.demonstracao3 {
+.demonstracao {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 20px;
 }
 
 .demonstracao img,
@@ -91,7 +97,11 @@ p {
     background-size: cover;
     max-width: 100%;
     max-height: 50vh;
-    margin-bottom: 20px;
+    padding: 1.8rem;
+
+}
+.demonstracao3 {
+    padding: 1rem;
 }
 
 .Emisa p {

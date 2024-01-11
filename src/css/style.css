@@ -5,46 +5,54 @@ html {
     display: flex;
     flex-direction: column;
 }
-
-.container,
-.primeira-metade,
-.segunda-metade {
-    flex: 1;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    font-family: 'EB Garamond', serif;
+:root {
+    --gap: 3rem;
 }
+
+.container{
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    height: 100vh;
+}
+#primeira-metade {
+    display: flex;
+    flex-flow: column wrap;
+    background-color: black;
+    justify-content: center;
+}
+
 .primeira-metade h2{
+    margin-top: 4rem;
     font-family: 'Cinzel', serif;
     font-size: 1.2em;
 }
-.primeira-metade {
-    background-color: black;
-    flex-direction: column;
+.alinhando-whapp img{
+    display: flex;
+    justify-content: center;
 }
-
+.alinhando-whapp, a{
+    display: flex;
+    justify-content: center;
+}
 .container img {
     max-width: 100%;
     height: auto;
     margin-bottom: 20vh;
 }
 
-.link_para_whatsapp {
-    padding-top: 25px;
-}
+
 
 .link_para_whatsapp img {
     background-size: auto;
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 1rem;
 }
 
 .link_para_whatsapp h2 {
     color: white;
+    text-align: center;
 }
 
 .apresentacao {
@@ -54,27 +62,30 @@ html {
 }
 
 .segunda-metade {
-    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     background: linear-gradient(#333, white);
-    width: 100%;
 }
 
 .segunda-metade h1,
 .segunda-metade h2 {
-    margin: 0;
+    margin: 0 auto;
     text-align: center;
+    padding: 2rem;
 }
 
-.segunda-metade h2,
-.segunda-metade h1 {
-    margin-bottom: 12vh;
-    /* Adicione algum espaçamento superior */
+.acesso1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
-
 .acesso1 a {
-    padding: 10px;
+    padding: 1rem;
     border-radius: 5px;
+    max-width: 15vh;
     border: none;
     background-color: #39e622;
     cursor: pointer;
@@ -83,7 +94,11 @@ html {
     text-decoration: none;
     color: black;
     margin-top: 3vh;
+}.acesso1 a:hover{
+    border: 1px solid #333;
+    background: rgb(139, 208, 208);
 }
+
 
 /* Adicione uma regra de mídia para telas menores (celulares e tablets) */
 /* Adicione uma regra de mídia para telas menores (celulares e tablets) */
