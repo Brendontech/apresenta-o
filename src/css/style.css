@@ -114,30 +114,44 @@ body, html {
 }
 
 @media (max-width: 768px) {
-    .logo {
-        width: 40vh;
+    .container {
+        height: auto;
     }
+
+    #primeira-metade,
+    .segunda-metade {
+        padding: var(--gap / 2); /* Ajuste de espaçamento */
+    }
+
+    .logo {
+        width: 70%; /* Ajuste para 70% da largura da tela */
+        height: auto;
+        margin: 0 auto;
+    }
+
     .link_para_whatsapp img {
-        width: 2rem; /* Alterei para rem */
-        height: 2rem; /* Alterei para rem */
-        margin-bottom: 0.25rem; /* Ajustei a margem inferior */
+        width: 2rem;
+        height: 2rem;
+        margin-bottom: 0.25rem;
     }
 
     .apresentacao {
-        padding: 0 var(--gap / 2); /* Ajustei o espaçamento horizontal */
-    }
-
-    .container {
-        height: auto;
+        padding: 0 var(--gap / 2);
     }
 
     .segunda-metade h1,
     .segunda-metade h2 {
         font-size: 1.3rem;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding-top: 1rem; /* Ajuste de espaçamento */
+    }
+
+    .acesso1 {
+        margin-bottom: 1rem; /* Ajuste de margem inferior */
     }
 
     .acesso1 a {
-        font-size: 1rem; /* Alterei para rem */
+        font-size: 1rem;
+        max-width: 70%; /* Ajuste para 70% da largura da tela */
     }
 }
