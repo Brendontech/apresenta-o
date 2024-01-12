@@ -68,7 +68,6 @@ body, html {
 }
 
 .segunda-metade {
-    height: 100vh;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -121,9 +120,6 @@ body, html {
     #primeira-metade,
     .segunda-metade {
         padding: var(--gap / 2);
-    }
-    .segunda-metade {
-        height: 40vh;
     }
 
     .logo {
