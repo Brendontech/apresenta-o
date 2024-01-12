@@ -1,71 +1,77 @@
-body,
-html {
+body, html {
     height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
 }
+
 :root {
     --gap: 3rem;
+    --font-size-base: 1rem; /* Defina o tamanho de fonte base em rem */
 }
 
-.container{
+.container {
     position: relative;
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
 }
+
 #primeira-metade {
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     background-color: black;
     justify-content: center;
+    padding: var(--gap);
 }
 
-.primeira-metade h2{
-    margin-top: 4rem;
+.logo  {
+    height: 40vh;
+    width: 70vh;
+    margin: 0 auto;
+}
+.primeira-metade h2 {
+    margin-top: 1.5rem; /* Reduzi a margem superior */
     font-family: 'Cinzel', serif;
-    font-size: 1.2em;
+    font-size: 1.2rem; /* Alterei para rem */
 }
-.alinhando-whapp img{
+
+.alinhando-whapp img {
     display: flex;
     justify-content: center;
-}
-.alinhando-whapp, a{
-    display: flex;
-    justify-content: center;
-}
-.container img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 20vh;
+    margin-bottom: 2rem; /* Ajustei a margem inferior */
 }
 
-
+.alinhando-whapp, a {
+    display: flex;
+    justify-content: center;
+}
 
 .link_para_whatsapp img {
     background-size: auto;
-    width: 6rem;
-    height: 6rem;
-    margin-bottom: 1rem;
+    width: 3rem; /* Alterei para rem */
+    height: 3rem; /* Alterei para rem */
+    margin-bottom: 0.5rem; /* Ajustei a margem inferior */
 }
 
 .link_para_whatsapp h2 {
     color: white;
     text-align: center;
+    font-size: 1rem; /* Alterei para rem */
 }
 
 .apresentacao {
     text-align: left;
-    padding: 0 20px;
-    /* Adicione espaçamento horizontal */
+    padding: 0 var(--gap); /* Adicionei espaçamento horizontal */
 }
 
 .segunda-metade {
-    height: 100%;
+    height: 100vh;
     text-align: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     background: linear-gradient(#333, white);
 }
@@ -74,64 +80,64 @@ html {
 .segunda-metade h2 {
     margin: 0 auto;
     text-align: center;
-    padding: 2rem;
+    padding-top: 2rem;
+    padding: 1.5rem; /* Ajustei o padding */
 }
 
 .acesso1 {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-bottom: 1.5rem; /* Ajustei a margem superior */
 }
+.acesso1 h1 {
+    padding-bottom: 6vh ;
+}
+
 .acesso1 a {
     padding: 1rem;
-    border-radius: 5px;
-    max-width: 15vh;
+    border-radius: 0.5rem; /* Alterei para rem */
+    max-width: 15rem; /* Alterei para rem */
     border: none;
     background-color: #39e622;
     cursor: pointer;
-    font-size: large;
+    font-size: 1rem; /* Alterei para rem */
     font-family: 'EB Garamond', serif;
     text-decoration: none;
     color: black;
-    margin-top: 3vh;
-}.acesso1 a:hover{
+    margin-top: 1.5rem; /* Ajustei a margem superior */
+}
+
+.acesso1 a:hover {
     border: 1px solid #333;
     background: rgb(139, 208, 208);
 }
 
-
-
 @media (max-width: 768px) {
-    .link_para_whatsapp {
-        padding-top: 15px; 
+    .logo {
+        width: 40vh;
     }
-
     .link_para_whatsapp img {
-        width: 4rem;
-        height: 4rem;
-        margin-bottom: 5px;
+        width: 2rem; /* Alterei para rem */
+        height: 2rem; /* Alterei para rem */
+        margin-bottom: 0.25rem; /* Ajustei a margem inferior */
     }
 
     .apresentacao {
-        padding: 0 10px; 
+        padding: 0 var(--gap / 2); /* Ajustei o espaçamento horizontal */
     }
-    .container{
-        position: relative;
-        display: grid;
-        flex-wrap: wrap;
-        flex-direction: column;
-        grid-template-columns: 0.8fr 1.2fr;
-        height: 100vh;
+
+    .container {
+        height: auto;
     }
-   
+
     .segunda-metade h1,
     .segunda-metade h2 {
-        font-size: 1.3rem; 
+        font-size: 1.3rem;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
 
     .acesso1 a {
-        font-size: medium;
+        font-size: 1rem; /* Alterei para rem */
     }
-
 }
