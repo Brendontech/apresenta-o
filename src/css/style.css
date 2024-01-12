@@ -7,7 +7,7 @@ body, html {
 
 :root {
     --gap: 3rem;
-    --font-size-base: 1rem; /* Defina o tamanho de fonte base em rem */
+    --font-size-base: 1rem; 
 }
 
 .container {
@@ -31,9 +31,9 @@ body, html {
     margin: 0 auto;
 }
 .primeira-metade h2 {
-    margin-top: 1.5rem; /* Reduzi a margem superior */
+    margin-top: 1.5rem; 
     font-family: 'Cinzel', serif;
-    font-size: 1.2rem; /* Alterei para rem */
+    font-size: 1.2rem;
 }
 
 .alinhando-whapp img {
@@ -41,7 +41,7 @@ body, html {
     justify-content: center;
     max-width: 100%;
     height: auto;
-    margin-bottom: 2rem; /* Ajustei a margem inferior */
+    margin-bottom: 2rem;
 }
 
 .alinhando-whapp, a {
@@ -51,20 +51,20 @@ body, html {
 
 .link_para_whatsapp img {
     background-size: auto;
-    width: 3rem; /* Alterei para rem */
-    height: 3rem; /* Alterei para rem */
-    margin-bottom: 0.5rem; /* Ajustei a margem inferior */
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.5rem;
 }
 
 .link_para_whatsapp h2 {
     color: white;
     text-align: center;
-    font-size: 1rem; /* Alterei para rem */
+    font-size: 1rem; 
 }
 
 .apresentacao {
     text-align: left;
-    padding: 0 var(--gap); /* Adicionei espaçamento horizontal */
+    padding: 0 var(--gap); 
 }
 
 .segunda-metade {
@@ -81,14 +81,14 @@ body, html {
     margin: 0 auto;
     text-align: center;
     padding-top: 2rem;
-    padding: 1.5rem; /* Ajustei o padding */
+    padding: 1.5rem;
 }
 
 .acesso1 {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 1.5rem; /* Ajustei a margem superior */
+    margin-bottom: 1.5rem;
 }
 .acesso1 h1 {
     padding-bottom: 6vh ;
@@ -96,16 +96,16 @@ body, html {
 
 .acesso1 a {
     padding: 1rem;
-    border-radius: 0.5rem; /* Alterei para rem */
-    max-width: 15rem; /* Alterei para rem */
+    border-radius: 0.5rem;
+    max-width: 15rem;
     border: none;
     background-color: #39e622;
     cursor: pointer;
-    font-size: 1rem; /* Alterei para rem */
+    font-size: 1rem; 
     font-family: 'EB Garamond', serif;
     text-decoration: none;
     color: black;
-    margin-top: 1.5rem; /* Ajustei a margem superior */
+    margin-top: 1.5rem; 
 }
 
 .acesso1 a:hover {
@@ -120,11 +120,14 @@ body, html {
 
     #primeira-metade,
     .segunda-metade {
-        padding: var(--gap / 2); /* Ajuste de espaçamento */
+        padding: var(--gap / 2);
+    }
+    .segunda-metade {
+        height: 40vh;
     }
 
     .logo {
-        width: 70%; /* Ajuste para 70% da largura da tela */
+        width: 70%; 
         height: auto;
         margin: 0 auto;
     }
@@ -143,15 +146,15 @@ body, html {
     .segunda-metade h2 {
         font-size: 1.3rem;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        padding-top: 1rem; /* Ajuste de espaçamento */
+        padding-top: 1rem; 
     }
 
     .acesso1 {
-        margin-bottom: 1rem; /* Ajuste de margem inferior */
+        margin-bottom: 1rem;
     }
 
     .acesso1 a {
         font-size: 1rem;
-        max-width: 70%; /* Ajuste para 70% da largura da tela */
+        max-width: 70%;
     }
 }
