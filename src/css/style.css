@@ -58,7 +58,7 @@ html {
 .apresentacao {
     text-align: left;
     padding: 0 20px;
-    /* Adicione algum espaçamento horizontal */
+    /* Adicione espaçamento horizontal */
 }
 
 .segunda-metade {
@@ -100,11 +100,10 @@ html {
 }
 
 
-/* Adicione uma regra de mídia para telas menores (celulares e tablets) */
-/* Adicione uma regra de mídia para telas menores (celulares e tablets) */
+
 @media (max-width: 768px) {
     .link_para_whatsapp {
-        padding-top: 15px; /* Reduza o espaçamento superior para telas menores */
+        padding-top: 15px; 
     }
 
     .link_para_whatsapp img {
@@ -114,7 +113,7 @@ html {
     }
 
     .apresentacao {
-        padding: 0 10px; /* Reduza o espaçamento horizontal para telas menores */
+        padding: 0 10px; 
     }
     .container{
         position: relative;
@@ -127,12 +126,12 @@ html {
    
     .segunda-metade h1,
     .segunda-metade h2 {
-        font-size: 1.3rem; /* Ajuste o tamanho da fonte para telas menores */
+        font-size: 1.3rem; 
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
 
     .acesso1 a {
-        font-size: medium; /* Reduza o tamanho da fonte para telas menores */
+        font-size: medium;
     }
 
 }
