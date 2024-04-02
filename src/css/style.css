@@ -1,8 +1,9 @@
-body, html {
+body{
     height: 100%;
     margin: 0;
+    background-color: #333;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 }
 
 :root {
@@ -10,38 +11,16 @@ body, html {
     --font-size-base: 1rem; 
 }
 
-.container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 40vh;
-}
-
 #primeira-metade {
     display: flex;
     flex-direction: column;
-    background-color: black;
     justify-content: center;
-    padding: var(--gap);
 }
 
 .logo  {
-    height: 40vh;
+    height: 36vh;
     width: 70vh;
     margin: 0 auto;
-}
-.primeira-metade h2 {
-    margin-top: 1.5rem; 
-    font-family: 'Cinzel', serif;
-    font-size: 1.2rem;
-}
-
-.alinhando-whapp img {
-    display: flex;
-    justify-content: center;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 2rem;
 }
 
 .alinhando-whapp, a {
@@ -55,32 +34,33 @@ body, html {
     height: 3rem;
     margin-bottom: 0.5rem;
 }
-
+.container {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .link_para_whatsapp h2 {
     color: white;
     text-align: center;
     font-size: 1rem; 
 }
 
-.apresentacao {
-    text-align: left;
-    padding: 0 var(--gap); 
+
+.apresentacao{
+    max-width: 1200px;
 }
 
 .segunda-metade {
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(#333, white);
 }
 
-.segunda-metade h1,
-.segunda-metade h2 {
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 2rem;
-    padding: 1.5rem;
+.segunda-metade p, h1 {
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 5vh;
 }
 
 .acesso1 {
@@ -98,12 +78,12 @@ body, html {
     border-radius: 0.5rem;
     max-width: 15rem;
     border: none;
-    background-color: #39e622;
+    background-color: #a53e16;
     cursor: pointer;
     font-size: 1rem; 
     font-family: 'EB Garamond', serif;
     text-decoration: none;
-    color: black;
+    color: #fff;
     margin-top: 1.5rem; 
 }
 

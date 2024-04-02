@@ -1,22 +1,32 @@
-body,
-html {
+body {
     height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
-    font-size: 1.2rem;
 }
-
-
+.merriweather-regular {
+    font-family: "Merriweather", serif;
+    font-weight: 100;
+    font-style: normal;
+}
+h1 {
+    font-size: 2.3rem;
+}
+h2 {
+    font-family: "Merriweather", serif;
+}
 p {
-    font-family: 'EB Garamond', serif;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
 }
+
 .primeira-metade img{
     height: 35vh;
 }
 .spacing{
     padding-bottom: 18vh;
 }
+
 .primeira-metade{
     position: fixed;
     top: 0;
@@ -25,6 +35,8 @@ p {
     height: 21vh;
     z-index: 1;
     width: 100%;
+    background-color: #333;;
+    flex-direction: column;
 }
 .container,
 .primeira-metade,
@@ -34,11 +46,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.primeira-metade {
-    background-color: black;
-    flex-direction: column;
+    width: 100%;
 }
 
 .segunda-metade img {
@@ -63,26 +71,21 @@ p {
 }
 
 .apresentacao {
-    text-align: left;
-    padding-top: 15vh;
-}
-
-.apresentacao h1 {
-    padding-bottom: 10vh;
+    padding-top: 10vh;
 }
 
 .segunda-metade {
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(#333, white);
-    width: 100%;
+    background: linear-gradient(#333, rgb(66, 60, 60), #333);
+    
 }
 .demonstracao img,
 .demonstracao2 img,
 .demonstracao3 img {
     background-size: cover;
     max-width: 100%;
-    max-height: 50vh;
+    max-height: 70vh;
     padding: 1rem;
     margin: 0 auto; 
     display: inline-block; 
@@ -92,26 +95,17 @@ p {
     padding: 1rem;
     text-align: center; 
 }
-.segunda-metade h1,
-.segunda-metade h2 {
-    margin: 0;
-    text-align: center;
-}
-
-.Fc_incorp {
-    padding-top: 3vh;
-
-}
-
-.Emisa p {
-    margin-bottom: 10vh;
-}
-
-.link_para_whatsapp {
+footer {
+    width: 100%;
     background-color: #333;
     display: flex;
-    text-align: center;
-    flex-direction: column;
+    justify-content: center;
+}
+.link_para_whatsapp {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    
 }
 
 .link_para_whatsapp img {
