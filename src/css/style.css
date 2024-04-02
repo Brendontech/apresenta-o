@@ -101,7 +101,11 @@ body{
     .segunda-metade {
         padding: var(--gap / 2);
     }
-
+    .container  h1, p {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
     .logo {
         width: 70%; 
         height: auto;
@@ -109,26 +113,14 @@ body{
     }
 
     .link_para_whatsapp img {
-        width: 2rem;
-        height: 2rem;
+        width: 4rem;
+        height: 4rem;
         margin-bottom: 0.25rem;
     }
 
     .apresentacao {
         padding: 0 var(--gap / 2);
     }
-
-    .segunda-metade h1,
-    .segunda-metade h2 {
-        font-size: 1.3rem;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        padding-top: 1rem; 
-    }
-
-    .acesso1 {
-        margin-bottom: 1rem;
-    }
-
     .acesso1 a {
         font-size: 1rem;
         max-width: 70%;
