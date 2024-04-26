@@ -1,0 +1,771 @@
+$(document).ready(function () {
+    var color = "#FFA02D";
+    //HEADER
+    $('#header_menu').click(function () {
+        $('section.drop_menu').attr('active', 'true');
+    });
+    $('#fechar_menu').click(function () {
+        $('section.drop_menu').attr('active', 'false');
+    });
+
+    $('[open-modal]').click(function () {
+        var modal_id = $(this).attr('open-modal');
+        $(modal_id).attr('active', 'true');
+    });
+
+    $('[dropContato]').click(function () {
+        var status = $(this).attr('active');
+
+        if(status == 'false')
+            $(this).attr('active', 'true');
+        else
+            $(this).attr('active', 'false');
+    });
+
+    //CONTACT SCROLL
+    let contact_scroll = function() {
+
+        if($(window).scrollTop() > 0){
+            $('header').attr('scroll', 'true');
+        }
+        else{
+            $('header').attr('scroll', 'false');
+        }
+
+        if($(document).height() < (2 * $(window).height())){
+            $('section.contato_fixed').attr('active','true');
+        }
+        else{
+            if($(window).scrollTop() < $(window).height()){
+                $('section.contato_fixed').attr('active','false');
+            }
+            else{
+                $('section.contato_fixed').attr('active','true');
+            }
+        }
+    }
+    $(window).scroll(contact_scroll);
+    contact_scroll();
+
+    // ----------- MODAIS
+    $(document).on('click', 'a[href=ligamos_voce]', function (e) {
+        e.preventDefault();
+        var options = {
+            form_name: "Ligamos para você",
+            table: "hbrd_desk_ligamos_voce",
+            form: 4,
+            list: 4,
+            custom_verify: {
+                nome: {
+                    type: "attention",
+                    message: "Preencha o campo Nome"
+                },
+                telefone: {
+                    type: "attention",
+                    message: "Preencha o campo Telefone"
+                },
+                celular: {
+                    type: "attention",
+                    message: "Preencha o campo Whatsapp"
+                },
+            }, not_required: {
+                checkbox1: 0, checkbox2: 0,
+            }
+        };
+        abrepopup('website/views/_popup_ligamosvoce.php', options);
+    });
+
+    $(document).on('click', 'a[href=atendimento_email]', function (e) {
+        e.preventDefault();
+        var options = {
+            form_name: "Atendimento por E-mail",
+            table: "hbrd_desk_atendimento_email",
+            form: 5,
+            list: 5,
+            custom_verify: {
+                nome: {
+                    type: "attention",
+                    message: "Preencha o campo Nome"
+                },
+                telefone: {
+                    type: "attention",
+                    message: "Preencha o campo Telefone"
+                },
+                celular: {
+                    type: "attention",
+                    message: "Preencha o campo Whatsapp"
+                },
+            }, not_required: {
+                empreendimento: 0, checkbox1: 0, checkbox2: 0,
+            }
+        };
+        abrepopup('website/views/_popup_atendimento_email.php', options);
+    });
+
+/*    $(document).on("click", function(e) {
+        var form1 = document.querySelector("section.modal_content#atendimento_email .content form");
+        var foraform1 = !form1.contains(e.target);
+
+        var form2 = document.querySelector("section.modal_content#ligamos .content form");
+        var foraform2 = !form2.contains(e.target);
+
+        var button1 = document.querySelector("section.contato_fixed .content a.ligamos");
+        var forabutton1 = !button1.contains(e.target);
+
+        var button2 = document.querySelector("section.contato_fixed .content a.email");
+        var forabutton2 = !button2.contains(e.target);
+
+        if (foraform1 && foraform2 && forabutton1 && forabutton2) {
+            $('section.modal_content').attr('active', 'false');
+        }
+    });*/
+
+    if (pagina === 'home'){
+        //CAROUSEL HEADER
+        $('#carousel_header_1').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 8000,
+            arrows: false,
+            dots: false,
+            variableWidth: false,
+            fade: true,
+            asNavFor: '#carousel_header_2',
+
+        });
+
+        $('#carousel_header_2').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: false,
+            variableWidth: true,
+            fade: false,
+            asNavFor: '#carousel_header_1'
+        });
+        
+        $('#carousel_header_2 button').click(function () {
+            var index = $(this).attr('index');
+            $('#carousel_header_2').slick('slickGoTo', index);
+        });
+
+        $('#carousel_header_arrow button').click(function () {
+            var direction = $(this).attr('class');
+        
+            $('#carousel_header_1').slick(direction);
+        });
+        //CAROUSEL DESTAQUES
+        $('#destaque_1').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 6000,
+            arrows: false,
+            dots: false,
+            variableWidth: false,
+            fade: true,
+            asNavFor: '#destaque_2'
+        });
+
+        $('#destaque_2').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: true,
+            appendDots: $('#destaque_dots'),
+            variableWidth: true,
+            fade: false,
+            asNavFor: '#destaque_1'
+        });
+
+        $('section.home_destaques .right_content .carousel .item').click(function () {
+            var index = $(this).attr('data-index');
+
+            $('#destaque_2').slick('slickGoTo', index);
+        });
+
+        $('#destaque_arrows button').click(function () {
+            var direction = $(this).attr('class');
+            $('#destaque_1').slick(direction);
+        });
+
+        $('#destaque_filtro button').click(function () {
+            var valor_filtro = $(this).attr('data-filter');
+
+            $('#destaque_filtro button').removeClass('active');
+            $(this).addClass('active');
+
+            $('#destaque_1').slick('slickUnfilter');
+            $('#destaque_2').slick('slickUnfilter');
+
+            if(valor_filtro != 0){
+                $('#destaque_1').slick('slickFilter','[data-filter="'+valor_filtro+'"]');
+                $('#destaque_2').slick('slickFilter','[data-filter="'+valor_filtro+'"]');
+            }
+            $('#destaque_1').slick('slickGoTo', 0);
+            $('#destaque_2').slick('slickGoTo', 0);
+        });
+        //Blog carousel
+        $('#blog_carousel').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            autoplay: true,
+            autoplaySpeed: 6000,
+            arrows: false,
+            variableWidth: true,
+            dots: true,
+            appendDots: $('#blog_carousel_dots'),
+            responsive: [
+                {
+                    breakpoint: 1301,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 601,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                }
+            ]
+        });
+    }
+    if (pagina === 'institucional'){
+        $('#menu_institucional').click(function () {
+            var status = $(this).attr('active');
+
+            if(status == 'false') {
+                $(this).attr('active', 'true');
+            }
+            else {
+                $(this).attr('active', 'false');
+            }
+        });
+    }
+    if (pagina === 'imoveis'){
+        $('#menu_busca').click(function () {
+            var status = $(this).attr('active');
+
+            if(status == 'false') {
+                $(this).attr('active', 'true');
+            }
+            else {
+                $(this).attr('active', 'false');
+            }
+        });
+    }
+    if (pagina === 'blog'){
+        $('#blog_menu').click(function () {
+            var status = $(this).attr('active');
+
+            if(status == 'false')
+                $(this).attr('active', 'true');
+            else
+                $(this).attr('active', 'false');
+        });
+    }
+    if (pagina === 'imovel'){
+    	new photoswipe_init('.galeria_imovel');
+    	new photoswipe_init('.galeria_plantas');
+    	new photoswipe_init('.galeria_obra');
+
+        $('section.imovel_header .form_content button.mobile_form').click(function () {
+            $('section.imovel_header .form_content').attr('active', 'true');
+        });
+        $('section.imovel_header .form_content form button.fechar').click(function () {
+            $('section.imovel_header .form_content').attr('active', 'false');
+        });
+        //GALERIA
+        $('#galeria_imovel .carousel').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            variableWidth: true,
+            dots: false,
+            autoplay: true,
+            autoplaySpeed: 6000,
+        });
+
+        var arrow_button = $('#galeria_imovel .arrows button');
+        arrow_button.click(function () {
+            var direction = $(this).attr('class');
+
+            $('#galeria_imovel .carousel').slick(direction);
+        });
+
+        var $status = $('#galeria_imovel .index_content');
+        $('#galeria_imovel .carousel').on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
+            var i = (currentSlide ? currentSlide : 0) + 1;
+            $status.text(i + '/' + slick.slideCount);
+        });
+        // $('#galeria_imovel .carousel').slick('slickGoTo', 0);
+        // $('#galeria_imovel .carousel').slick('slickFilter','[filter="0"]');
+        // SETANDO VALORES INICIAIS PARA GALERIA
+        $('#galeria_filter button').eq(0).attr('class', 'active');
+        var value = $('#galeria_filter button').eq(0).attr('filter');
+        if (value) {
+            $('#galeria_imovel .carousel').slick('slickFilter','[filter="' + value + '"]');
+        }
+
+        $('#galeria_filter button').click(function () {
+            $('#galeria_filter button').removeClass('active');
+            $(this).addClass('active');
+            var valor_filtro = $(this).attr("filter");
+        
+            $('#galeria_imovel .carousel').slick('slickUnfilter');
+        
+            $('#galeria_imovel .carousel').slick('slickFilter','[filter="'+valor_filtro+'"]');
+            $('#galeria_imovel .carousel').slick('slickGoTo', 0);
+        });
+
+        $('#galeria_filter').click(function () {
+            var status = $(this).attr('active');
+
+            if(status == 'false'){
+                $(this).attr('active', 'true');
+            }
+            else{
+                $(this).attr('active', 'false');
+            }
+        });
+        //PLANTAS
+
+
+        $('#carousel_plantas .carousel').slick({
+            infinite: true,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            arrows: false,
+            variableWidth: true,
+            dots: true,
+            appendDots: $('#carousel_plantas .dots'),
+            responsive: [
+                {
+                    breakpoint: 1051,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                }
+            ]
+        });
+        $('#carousel_plantas .arrows button').click(function () {
+            var direction = $(this).attr('class');
+
+            $('#carousel_plantas .carousel').slick(direction);
+        });
+
+        $('#menu_plantas').click(function () {
+            var status = $(this).attr('active');
+
+            if(status == 'false') {
+                $(this).attr('active', 'true');
+            }
+            else {
+                $(this).attr('active', 'false');
+            }
+        });
+        $('section.imovel_planta .filtro .content button').click(function () {
+            $('section.imovel_planta .filtro .content button').removeClass('active');
+            $(this).addClass('active');
+
+            var valor_filtro = $(this).attr("filter");
+        
+            $('#carousel_plantas .carousel').slick('slickUnfilter');
+            $('#carousel_plantas .carousel').slick('slickFilter','[filter="'+valor_filtro+'"]');
+            $('#carousel_plantas .carousel').slick('slickGoTo', 0);
+        });
+        var filtro_initial = $('section.imovel_planta .filtro .content button.active').attr('filter');
+        $('#carousel_plantas .carousel').slick('slickFilter','[filter="'+filtro_initial+'"]');
+
+
+        //OBRAS
+        function barra_calculate() {
+            $('.barra').each(function(index, element) {
+                let item = $(element);
+                var porcentagem = Number(item.attr('porcentagem'));
+                var left = item.children('.left').children('div');
+                var right = item.children('.right').children('div');
+                var rotate;
+                if (porcentagem < 50) {
+                    porcentagem = porcentagem / 50;
+                    rotate = porcentagem * 180;
+                    right.css('transform', 'rotate(' + rotate + 'deg)');
+                } else {
+                    right.css('transform', 'rotate(180deg)');
+                    porcentagem = (porcentagem - 50) / 50;
+                    rotate = porcentagem * 180;
+                    left.css('transform', 'rotate(' + rotate + 'deg)');
+                }
+            })
+        }
+        barra_calculate();
+        //GALERIA OBRA
+        $('#fotos_obra .carousel').slick({
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            arrows: false,
+            variableWidth: true,
+            dots: true,
+            appendDots: $('#fotos_obra .dots'),
+            responsive: [
+                {
+                    breakpoint: 1551,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                    }
+                },
+                {
+                    breakpoint: 1151,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 801,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                }
+            ]
+        });
+        $('#videos_obra .carousel').slick({
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            arrows: false,
+            variableWidth: true,
+            dots: true,
+            appendDots: $('#videos_obra .dots'),
+            responsive: [
+                {
+                    breakpoint: 1551,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                    }
+                },
+                {
+                    breakpoint: 1151,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+                {
+                    breakpoint: 801,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                }
+            ]
+        });
+
+        // SETANDO VALORES INICIAIS PARA ESTAGIO DA OBRA
+        var select_filtro = $('#select-estagio option').eq(0).val();
+        if (select_filtro) {
+            $('#fotos_obra .carousel').slick('slickFilter','[filtro="' + select_filtro + '"]');
+            $('#videos_obra .carousel').slick('slickFilter','[filtro="' + select_filtro + '"]');
+            $("section.imovel_progresso .content .item").each(function(i, e) {
+                $(e).attr("value") !== select_filtro ? e.setAttribute('hidden', 'hidden') : e.removeAttribute('hidden');
+            });
+        }
+        $('section.imovel_obra .filtros .mes select').change(function () {
+            var valor_filtro = $(this).val();
+
+            $('#fotos_obra .carousel').slick('slickUnfilter');
+            $('#videos_obra .carousel').slick('slickUnfilter');
+
+            $('#fotos_obra .carousel').slick('slickGoTo', 0);
+            $('#videos_obra .carousel').slick('slickGoTo', 0);
+        
+            if (valor_filtro !== 0) {
+                $('#fotos_obra .carousel').slick('slickFilter','[filtro="'+valor_filtro+'"]');
+                $('#videos_obra .carousel').slick('slickFilter','[filtro="'+valor_filtro+'"]');
+                //ANDAMENTOS
+                $("section.imovel_progresso .content .item").each(function(i, e) {
+                    $(e).attr("value") !== valor_filtro ? e.setAttribute('hidden', 'hidden') : e.removeAttribute('hidden');
+                });
+            }
+        });
+
+        $('section.imovel_obra .filtros .tipo button').click(function () {
+            var carousel_index = $(this).attr('carousel');
+
+            $('section.imovel_obra .filtros .tipo button').removeClass('active');
+            $(this).addClass('active');
+            $('section.imovel_obra .carousel_content').removeClass('active');
+
+            $('#fotos_obra .carousel').slick('slickGoTo', 0);
+            $('#videos_obra .carousel').slick('slickGoTo', 0);
+
+            if (carousel_index == '1') {
+                $('#fotos_obra').addClass('active');
+            } else {
+                $('#videos_obra').addClass('active');
+            }
+        });
+    }
+
+    if (pagina === 'imovel') {
+        var options = {
+            form_name: "Cadastro imovel - " + hotsite_name,
+            table: "hbrd_desk_empreendimentos_cadastros",
+            form: hotsite_form_cadastro,
+            list: hotsite_lista_cadastro,
+            custom_verify: {
+                nome: {
+                    type: "attention",
+                    message: "Preencha o campo Nome"
+                },
+                email: {
+                    type: "attention",
+                    call: "validaEmail",
+                    message: "Preencha o campo E-mail com um endereço válido"
+                },
+                telefone: {
+                    type: "attention",
+                    message: "Preencha o campo Telefone"
+                },
+            },
+            not_required: {
+                checkbox1: 0, checkbox2: 0,
+            }
+        };
+        $form = $("form[name=form_default]");
+        $form.makeclickform(options);
+    }
+
+    if(pagina == 'evento'){
+        var options = {
+            form_name: "Cadastro evento - " + hotsite_name,
+            table: "hbrd_desk_evento_cadastros",
+            form: hotsite_form_cadastro,
+            list: hotsite_lista_cadastro,
+            custom_verify: {
+                nome: {
+                    type: "attention",
+                    message: "Preencha o campo Nome"
+                },
+                email: {
+                    type: "attention",
+                    call: "validaEmail",
+                    message: "Preencha o campo E-mail com um E-mail válido"
+                },
+                telefone: {
+                    type: "attention",
+                    message: "Preencha o campo Telefone"
+                },
+            },
+            not_required: {
+                checkbox1: 0, checkbox2: 0,
+            }
+        };
+        $form = $("form[name=form_default]");
+        $form.makeclickform(options);
+    }
+
+    if (pagina === 'fale-conosco') {
+        var options = {
+            form_name: "Fale Conosco",
+            table: "hbrd_desk_fale_conosco",
+            form: 2,
+            list: 2,
+            custom_verify: {
+                nome: {
+                    type: "attention",
+                    message: "Preencha o campo nome"
+                },
+                email: {
+                    type: "attention",
+                    call: "validaEmail",
+                    message: "Preencha este campo com um E-mail válido"
+                },
+                celular: {
+                    type: "attention",
+                    message: "Preencha o campo celular"
+                },
+            },
+            not_required: {
+                telefone_fixo: 0, mensagem: 0, checkbox1: 0, checkbox2: 0,
+            }, resolve : function() {
+                location.reload();
+            }
+        };
+        $form = $("form[name=form_default]");
+        $form.makeclickform(options);
+    }
+
+    if (pagina === 'trabalhe-conosco') {
+        var options = {
+            form_name: "Trabalhe conosco",
+            table: "hbrd_desk_trabalhe_conosco",
+            form: 28,
+            list: 4,
+            custom_verify: {
+                nome: {
+                    type: "attention",
+                    message: "Preencha o campo nome"
+                },
+                email: {
+                    type: "attention",
+                    call: "validaEmail",
+                    message: "Preencha este campo com um E-mail válido"
+                },
+                celular: {
+                    type: "attention",
+                    message: "Preencha o campo celular"
+                },
+                curriculo: {
+                    type: "attention",
+                    message: "Anexe a currículo",
+                    upload: ["doc", "pdf", "docx"]
+                },
+                area_interesse: {
+                    type: "attention",
+                    message: "Selecione o campo area de interesse"
+                },
+            },
+            not_required: {
+                telefone: 0, mensagem: 0, checkbox1: 0, checkbox2: 0,
+            }, resolve : function() {
+                location.reload();
+            }
+        };
+        $form = $("form[name=form_default]");
+        $form.makeclickform(options);
+    }
+
+    if (pagina === 'venda-seu-terreno') {
+        var options = {
+            form_name: "Venda seu terreno",
+            table: "hbrd_desk_venda_terreno",
+            form: 3,
+            list: 3,
+            custom_verify: {
+                nome: {
+                    type: "attention",
+                    message: "Preencha o campo nome"
+                },
+                email: {
+                    type: "attention",
+                    call: "validaEmail",
+                    message: "Preencha este campo com um E-mail válido"
+                },
+                arquivo: {
+                    type: "attention",
+                    message: "Anexe a foto do terreno",
+                    upload: ["jpg", "jpeg", "png"]
+                },
+            }, not_required: {
+                mensagem: 0, checkbox1: 0, checkbox2: 0,
+            }, resolve : function() {
+                $('label[for=arquivo] div').html('');
+            }
+        };
+        $form = $("form[name=form_default]");
+        $form.makeclickform(options);
+
+        $('select[name=estado]').change(() => {
+            let uf = $('select[name=estado]').val();
+            $.get(`${scripts_path}utils-cidades.php?uf=${uf}`).then(res => $('select[name=cidade]').html(res));
+        })
+    }
+    //MASCARAS
+    var celular = function (val) {
+        return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+    },
+    spOptions = {
+        onKeyPress: function(val, e, field, options) {
+            field.mask(celular.apply({}, arguments), options);
+        }
+    };
+
+    $('[mask="telefone"]').mask(celular, spOptions);
+    $('[mask="preco"]').mask("###.##0,00", {reverse: true});
+    $('[mask="number"]').mask("##############################");
+    $('[mask="data"]').mask("00/00/0000", {placeholder: "__/__/____"});
+    $('[mask="cpf"]').mask('000.000.000-00');
+
+    $('#arquivo').change(function () {
+        var files = $(this)[0].files;
+        var nome = files[0].name;
+        $('label[for="arquivo"] span').html(nome);
+    });
+
+    if (!localStorage.getItem("politica")) {
+        setTimeout(() => $('section.politica_modal').attr('active', 'true'), 2000);
+    }
+});
+
+function aceitartermos() {
+    localStorage.setItem("politica", 1);
+    $('section.politica_modal').attr('active', 'false');
+}
+
+function abrepopup(url, options_) {
+    $('<div id="popupoverlay_container"></div>').appendTo('body');
+    $('#popupoverlay_container').popup({
+        transition: 'all 0.3s',
+        scrolllock: true,
+        closetransitionend: function () {
+            $('#popupoverlay_container').remove();
+            if (typeof options !== 'undefined') {
+                $form = $("form[name=form_default]");
+                $("body").find("#popupoverlay_container_background").remove();
+                $("body").find("#popupoverlay_container_wrapper").remove();
+                $form.makeclickform(options);
+            }
+        }
+    });
+    $('#popupoverlay_container').load(url, function () {
+        $('#popupoverlay_container').popup('show');
+        $('#popupoverlay_container select.dumb').trigger('change');
+        $('#popupoverlay_container ._close').click(function () {
+            $('#popupoverlay_container').popup('hide');
+            $("body .cf_errorbox").remove();
+        });
+        if (typeof options_ != 'undefined') {
+            if (options_ == 1) {
+                $(".form_corretor_dados").clickform({ 'validateUrl': scripts_path + 'form-portal-corretor-alterar-dados.php', 'submitButton': '.clickformsubmit', 'blockScroll': true }, function (data) {
+                    if (data.type == "success") {
+                        window.location.reload();
+                    }
+                });
+            } else {
+                if (typeof options_.addInput !== 'undefined') {
+                    if (typeof options_.addInputForm !== 'undefined')
+                        $(options_.addInputForm).append($("<input/>").attr("type", "hidden").attr("name", "id_empreendimento").addClass("get").val(options_.addInput));
+                    else
+                        $("body .popup_default form[name=form_default]").append($("<input/>").attr("type", "hidden").attr("name", "id_empreendimento").addClass("get").val(options_.addInput));
+                    delete options_.addInput;
+                }
+                if (typeof options_.addInputSEO !== 'undefined') {
+                    if (typeof options_.addInputFormSEO !== 'undefined')
+                        $(options_.addInputFormSEO).append($("<input/>").attr("type", "hidden").attr("name", "id_seo").addClass("get").val(options_.addInputSEO));
+                    else
+                        $("body .popup_default form[name=form_default]").append($("<input/>").attr("type", "hidden").attr("name", "id_seo").addClass("get").val(options_.addInputSEO));
+                    delete options_.addInputSEO;
+                }
+                $form = $("body .popup_default form[name=form_default]");
+                $form.makeclickform(options_);
+                if ($('.input_content').length != 0) input_effect();
+            }
+        }
+    });
+}

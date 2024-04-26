@@ -11,13 +11,16 @@ body {
 }
 h1 {
     font-size: 2.3rem;
+    color: rgba(190, 192, 195, 0.986);
 }
 h2 {
     font-family: "Merriweather", serif;
+    color: rgba(190, 192, 195, 0.852);
 }
 p {
     font-family: "Montserrat", sans-serif;
     font-size: 1.1rem;
+    color: aliceblue;
 }
 
 .primeira-metade img{
